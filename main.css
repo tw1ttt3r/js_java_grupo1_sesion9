@@ -1,0 +1,17 @@
+#perfil {
+    margin-top: 16px;
+}
+
+#perfil > div {
+    display: flex;
+}
+
+#perfil > div > div {
+    margin-left: 16px;
+}
+
+#logout {
+    display: none;
+    margin-top: 16px;
+    flex-direction: row-reverse;
+}

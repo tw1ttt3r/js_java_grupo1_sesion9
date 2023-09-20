@@ -1,4 +1,7 @@
 const formulario = document.getElementById("login"); // nodo
+const logout = document.getElementById("act_logout"); 
+
+let sesion = null;
 
 formulario.addEventListener("submit", (event) => {
     console.log("antes del click")
@@ -23,10 +26,12 @@ formulario.addEventListener("submit", (event) => {
     const passData = event.target.children.pass.value;
 
     if (userData !== "" && passData !== "") {
-        const exitoso = Login(userData, passData);
+        const exitoso = Login(userData, passData); // boolean | object
 
-        if (exitoso) {
+        if (exitoso !== false) {
             alert("Login exitoso");
+            despuesLogin(event.target);
+            CargaPerfil(exitoso);
         } else {
             alert("revisa tus credenciales")
         }
@@ -34,6 +39,10 @@ formulario.addEventListener("submit", (event) => {
         MensajeError();
     }
 
+});
+
+logout.addEventListener("click", () => {
+    cierraSesion()
 });
 
 // const boton = document.getElementById("click");
