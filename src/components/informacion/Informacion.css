@@ -1,0 +1,6 @@
+.container-informacion {
+  display: flex;
+  padding-left: 16px;
+  gap: 8px;
+}
+

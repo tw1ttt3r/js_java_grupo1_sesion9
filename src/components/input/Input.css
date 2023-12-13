@@ -1,0 +1,10 @@
+.container-input {
+  display: flex;
+  gap: 4px;
+}
+
+.container-input-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

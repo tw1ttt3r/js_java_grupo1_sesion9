@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './components/title/Title';
+import Input from './components/input/Input';
+import Button from './components/boton/Button';
+import Modal from './components/modal/Modal';
+import { useState } from 'react';
 
 function App() {
+
+  const [ visibleModal, setVisibleModal ] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title title="Mi Escuela"/>
+      <form>
+        <Input id="user" label="Usuario: " />
+        <Input id="pass" label="Contraseña: " type="password" />
+        <Button texto="login" />
+      </form>
+      { visibleModal && <Modal descripcion="Login Exitoso" texto="Aceptar" /> }
     </div>
   );
 }
